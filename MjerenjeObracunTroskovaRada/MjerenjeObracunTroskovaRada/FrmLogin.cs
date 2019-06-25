@@ -56,29 +56,29 @@ namespace MjerenjeObracunTroskovaRada
                     case 1:
                         {
                             FrmAdministrator frmAdministrator = new FrmAdministrator(prijavljeniKorisnik);
+                            this.Hide();
                             frmAdministrator.ShowDialog();
-                            this.Close();
                             break;
                         }
                     case 2:
                         {
                             FrmRacunovoda frmRacunovoda = new FrmRacunovoda(prijavljeniKorisnik);
+                            this.Hide();
                             frmRacunovoda.ShowDialog();
-                            this.Close();
                             break;
                         }
                     case 3:
                         {
                             FrmZaposlenikOdjelaULJP frmZaposlenikOdjelaULJP = new FrmZaposlenikOdjelaULJP(prijavljeniKorisnik);
+                            this.Hide();
                             frmZaposlenikOdjelaULJP.ShowDialog();
-                            this.Close();
                             break;
                         }
                     case 4:
                         {
                             FrmZaposlenik frmZaposlenik = new FrmZaposlenik(prijavljeniKorisnik);
+                            this.Hide();
                             frmZaposlenik.ShowDialog();
-                            this.Close();
                             break;
                         }
                     default:

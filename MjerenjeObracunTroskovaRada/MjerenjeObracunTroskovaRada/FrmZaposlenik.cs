@@ -17,6 +17,18 @@ namespace MjerenjeObracunTroskovaRada
         {
             InitializeComponent();
             prijavljeniKorisnik = k;
+            uiActionOdjava.Items.Add("Odjava");
+            txtImeKorisnika.Text = k.Ime + " " + k.Prezime;
+        }
+
+        private void uiActionOdjava_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (uiActionOdjava.SelectedItem != null)
+            {
+                FrmLogin frmLogin = new FrmLogin();
+                this.Hide();
+                frmLogin.ShowDialog();
+            }
         }
     }
 }

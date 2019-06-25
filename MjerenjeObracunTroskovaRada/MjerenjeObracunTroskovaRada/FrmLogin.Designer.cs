@@ -41,22 +41,22 @@
             this.lblKorisnickoIme.AutoSize = true;
             this.lblKorisnickoIme.Location = new System.Drawing.Point(37, 42);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
-            this.lblKorisnickoIme.Size = new System.Drawing.Size(96, 17);
+            this.lblKorisnickoIme.Size = new System.Drawing.Size(100, 19);
             this.lblKorisnickoIme.TabIndex = 0;
             this.lblKorisnickoIme.Text = "Korisničko ime:";
             // 
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
-            this.lblLozinka.Location = new System.Drawing.Point(73, 85);
+            this.lblLozinka.Location = new System.Drawing.Point(79, 85);
             this.lblLozinka.Name = "lblLozinka";
-            this.lblLozinka.Size = new System.Drawing.Size(54, 17);
+            this.lblLozinka.Size = new System.Drawing.Size(58, 19);
             this.lblLozinka.TabIndex = 1;
             this.lblLozinka.Text = "Lozinka:";
             // 
             // txtKorisnickoIme
             // 
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(135, 38);
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(143, 39);
             this.txtKorisnickoIme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
             this.txtKorisnickoIme.Size = new System.Drawing.Size(334, 25);
@@ -64,7 +64,7 @@
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(136, 85);
+            this.txtLozinka.Location = new System.Drawing.Point(143, 85);
             this.txtLozinka.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(333, 25);
@@ -73,7 +73,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(393, 143);
+            this.btnLogin.Location = new System.Drawing.Point(401, 142);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 33);
             this.btnLogin.TabIndex = 4;
@@ -81,7 +81,7 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Form1
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,10 +91,11 @@
             this.Controls.Add(this.txtKorisnickoIme);
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblKorisnickoIme);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.ResumeLayout(false);
             this.PerformLayout();
