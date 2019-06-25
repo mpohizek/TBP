@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace MjerenjeObracunTroskovaRada
 {
-    public partial class Form1 : Form
+    public partial class FrmRacunovoda : Form
     {
-        public Form1()
+        public Korisnik prijavljeniKorisnik { get; set; } = null;
+        public FrmRacunovoda(Korisnik k)
         {
             InitializeComponent();
+            prijavljeniKorisnik = k;
         }
     }
 }
