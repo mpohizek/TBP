@@ -30,5 +30,58 @@ namespace MjerenjeObracunTroskovaRada
                 frmLogin.ShowDialog();
             }
         }
+
+        private void FrmZaposlenikOdjelaULJP_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FrmZaposlenikOdjelaULJP_Load(object sender, EventArgs e)
+        {
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            evidencijaOdlaskaDolaska.MdiParent = this;
+            evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
+            evidencijaOdlaskaDolaska.Show();
+        }
+
+        private void evidencijaDolaskaOdlaskaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            evidencijaOdlaskaDolaska.MdiParent = this;
+            evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
+            evidencijaOdlaskaDolaska.Show();
+        }
+
+        private void planiranjeGodisnjegOdmoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.PlaniranjeGodisnjegOdmora planiranjeGodisnjegOdmora = new FormeIzbornici.PlaniranjeGodisnjegOdmora();
+            planiranjeGodisnjegOdmora.MdiParent = this;
+            planiranjeGodisnjegOdmora.WindowState = FormWindowState.Maximized;
+            planiranjeGodisnjegOdmora.Show();
+        }
+
+        private void pregledToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.PregledStanjaPrekovremenihSati pregledStanjaPrekovremenihSati = new FormeIzbornici.PregledStanjaPrekovremenihSati();
+            pregledStanjaPrekovremenihSati.MdiParent = this;
+            pregledStanjaPrekovremenihSati.WindowState = FormWindowState.Maximized;
+            pregledStanjaPrekovremenihSati.Show();
+        }
+
+        private void unosNovihZaposlenikaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.UnosNovihZaposlenika unosNovihZaposlenika = new FormeIzbornici.UnosNovihZaposlenika();
+            unosNovihZaposlenika.MdiParent = this;
+            unosNovihZaposlenika.WindowState = FormWindowState.Maximized;
+            unosNovihZaposlenika.Show();
+        }
+
+        private void azuriranjePodatakaOZaposlenicimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.AzuriranjePodatakaZaposlenika azuriranjePodatakaZaposlenika = new FormeIzbornici.AzuriranjePodatakaZaposlenika();
+            azuriranjePodatakaZaposlenika.MdiParent = this;
+            azuriranjePodatakaZaposlenika.WindowState = FormWindowState.Maximized;
+            azuriranjePodatakaZaposlenika.Show();
+        }
     }
 }

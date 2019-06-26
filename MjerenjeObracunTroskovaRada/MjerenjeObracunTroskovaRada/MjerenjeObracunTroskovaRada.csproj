@@ -57,6 +57,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormeIzbornici\AzuriranjePodatakaZaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\AzuriranjePodatakaZaposlenika.Designer.cs">
+      <DependentUpon>AzuriranjePodatakaZaposlenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormeIzbornici\EvidencijaOdlaskaDolaska.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\EvidencijaOdlaskaDolaska.Designer.cs">
+      <DependentUpon>EvidencijaOdlaskaDolaska.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormeIzbornici\ObracunPlaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\ObracunPlaca.Designer.cs">
+      <DependentUpon>ObracunPlaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormeIzbornici\PlaniranjeGodisnjegOdmora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\PlaniranjeGodisnjegOdmora.Designer.cs">
+      <DependentUpon>PlaniranjeGodisnjegOdmora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormeIzbornici\PregledStanjaPrekovremenihSati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\PregledStanjaPrekovremenihSati.Designer.cs">
+      <DependentUpon>PregledStanjaPrekovremenihSati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormeIzbornici\UnosNovihZaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\UnosNovihZaposlenika.Designer.cs">
+      <DependentUpon>UnosNovihZaposlenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormeIzbornici\UpravljanjeKorisnickimRacunima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormeIzbornici\UpravljanjeKorisnickimRacunima.Designer.cs">
+      <DependentUpon>UpravljanjeKorisnickimRacunima.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdministrator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +134,27 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpravljanjePodacima.cs" />
+    <EmbeddedResource Include="FormeIzbornici\AzuriranjePodatakaZaposlenika.resx">
+      <DependentUpon>AzuriranjePodatakaZaposlenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormeIzbornici\EvidencijaOdlaskaDolaska.resx">
+      <DependentUpon>EvidencijaOdlaskaDolaska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormeIzbornici\ObracunPlaca.resx">
+      <DependentUpon>ObracunPlaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormeIzbornici\PlaniranjeGodisnjegOdmora.resx">
+      <DependentUpon>PlaniranjeGodisnjegOdmora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormeIzbornici\PregledStanjaPrekovremenihSati.resx">
+      <DependentUpon>PregledStanjaPrekovremenihSati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormeIzbornici\UnosNovihZaposlenika.resx">
+      <DependentUpon>UnosNovihZaposlenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormeIzbornici\UpravljanjeKorisnickimRacunima.resx">
+      <DependentUpon>UpravljanjeKorisnickimRacunima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrator.resx">
       <DependentUpon>FrmAdministrator.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,5 +193,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

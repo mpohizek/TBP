@@ -30,5 +30,42 @@ namespace MjerenjeObracunTroskovaRada
                 frmLogin.ShowDialog();
             }
         }
+
+        private void FrmZaposlenik_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FrmZaposlenik_Load(object sender, EventArgs e)
+        {
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            evidencijaOdlaskaDolaska.MdiParent = this;
+            evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
+            evidencijaOdlaskaDolaska.Show();
+        }
+
+        private void evidencijaDolaskaOdlaskaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            evidencijaOdlaskaDolaska.MdiParent = this;
+            evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
+            evidencijaOdlaskaDolaska.Show();
+        }
+
+        private void planiranjeGodisnjegOdmoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.PlaniranjeGodisnjegOdmora planiranjeGodisnjegOdmora = new FormeIzbornici.PlaniranjeGodisnjegOdmora();
+            planiranjeGodisnjegOdmora.MdiParent = this;
+            planiranjeGodisnjegOdmora.WindowState = FormWindowState.Maximized;
+            planiranjeGodisnjegOdmora.Show();
+        }
+
+        private void pregledStanjaPrekovremenihSatiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.PregledStanjaPrekovremenihSati pregledStanjaPrekovremenihSati = new FormeIzbornici.PregledStanjaPrekovremenihSati();
+            pregledStanjaPrekovremenihSati.MdiParent = this;
+            pregledStanjaPrekovremenihSati.WindowState = FormWindowState.Maximized;
+            pregledStanjaPrekovremenihSati.Show();
+        }
     }
 }

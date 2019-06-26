@@ -28,10 +28,10 @@ namespace MjerenjeObracunTroskovaRada
                 Korisnik autenticiraniKorinik = null;
 
                 conn.Open();
-                string sqlNaredba = "SELECT * FROM korisnik WHERE korisnicko_ime = '"+ korIme +"' AND zaporka = '"+ zaporka +"'";
+                string sqlNaredba = "SELECT * FROM korisnik WHERE korisnicko_ime = '" + korIme + "' AND zaporka = '" + zaporka + "'";
                 NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
                 NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
-                
+
                 while (reader.Read())
                 {
                     Korisnik korisnik = new Korisnik(reader);

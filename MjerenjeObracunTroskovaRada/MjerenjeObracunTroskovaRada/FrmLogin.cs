@@ -93,5 +93,10 @@ namespace MjerenjeObracunTroskovaRada
             }
             
         }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

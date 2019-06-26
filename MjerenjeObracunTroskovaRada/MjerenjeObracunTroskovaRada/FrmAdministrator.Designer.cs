@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             this.izbornikAdministrator = new System.Windows.Forms.MenuStrip();
+            this.upravljanjeKorisnickimRacunimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uiActionOdjava = new System.Windows.Forms.ComboBox();
             this.txtImeKorisnika = new System.Windows.Forms.TextBox();
+            this.izbornikAdministrator.SuspendLayout();
             this.SuspendLayout();
             // 
             // izbornikAdministrator
             // 
+            this.izbornikAdministrator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.upravljanjeKorisnickimRacunimaToolStripMenuItem});
             this.izbornikAdministrator.Location = new System.Drawing.Point(0, 0);
             this.izbornikAdministrator.Name = "izbornikAdministrator";
             this.izbornikAdministrator.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -42,12 +46,19 @@
             this.izbornikAdministrator.TabIndex = 1;
             this.izbornikAdministrator.Text = "menuStrip1";
             // 
+            // upravljanjeKorisnickimRacunimaToolStripMenuItem
+            // 
+            this.upravljanjeKorisnickimRacunimaToolStripMenuItem.Name = "upravljanjeKorisnickimRacunimaToolStripMenuItem";
+            this.upravljanjeKorisnickimRacunimaToolStripMenuItem.Size = new System.Drawing.Size(195, 20);
+            this.upravljanjeKorisnickimRacunimaToolStripMenuItem.Text = "Upravljanje korisničkim računima";
+            this.upravljanjeKorisnickimRacunimaToolStripMenuItem.Click += new System.EventHandler(this.upravljanjeKorisnickimRacunimaToolStripMenuItem_Click);
+            // 
             // uiActionOdjava
             // 
             this.uiActionOdjava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.uiActionOdjava.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiActionOdjava.FormattingEnabled = true;
-            this.uiActionOdjava.Location = new System.Drawing.Point(772, 24);
+            this.uiActionOdjava.Location = new System.Drawing.Point(772, 0);
             this.uiActionOdjava.Name = "uiActionOdjava";
             this.uiActionOdjava.Size = new System.Drawing.Size(161, 25);
             this.uiActionOdjava.TabIndex = 2;
@@ -56,7 +67,7 @@
             // txtImeKorisnika
             // 
             this.txtImeKorisnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImeKorisnika.Location = new System.Drawing.Point(772, 24);
+            this.txtImeKorisnika.Location = new System.Drawing.Point(772, 0);
             this.txtImeKorisnika.Name = "txtImeKorisnika";
             this.txtImeKorisnika.ReadOnly = true;
             this.txtImeKorisnika.Size = new System.Drawing.Size(143, 25);
@@ -74,8 +85,12 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.izbornikAdministrator;
             this.Name = "FrmAdministrator";
-            this.Text = "FormaAdministrator";
+            this.Text = "ADMINISTRATOR";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdministrator_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAdministrator_Load);
+            this.izbornikAdministrator.ResumeLayout(false);
+            this.izbornikAdministrator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,5 +101,6 @@
         private System.Windows.Forms.MenuStrip izbornikAdministrator;
         private System.Windows.Forms.ComboBox uiActionOdjava;
         private System.Windows.Forms.TextBox txtImeKorisnika;
+        private System.Windows.Forms.ToolStripMenuItem upravljanjeKorisnickimRacunimaToolStripMenuItem;
     }
 }

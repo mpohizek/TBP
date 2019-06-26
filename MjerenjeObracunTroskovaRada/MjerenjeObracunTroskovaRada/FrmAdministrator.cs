@@ -30,5 +30,26 @@ namespace MjerenjeObracunTroskovaRada
                 frmLogin.ShowDialog();
             }
         }
+
+        private void FrmAdministrator_Load(object sender, EventArgs e)
+        {
+            FormeIzbornici.UpravljanjeKorisnickimRacunima upravljanjeKorisnickimRacunima = new FormeIzbornici.UpravljanjeKorisnickimRacunima();
+            upravljanjeKorisnickimRacunima.MdiParent = this;
+            upravljanjeKorisnickimRacunima.WindowState = FormWindowState.Maximized;
+            upravljanjeKorisnickimRacunima.Show();
+        }
+
+        private void upravljanjeKorisnickimRacunimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormeIzbornici.UpravljanjeKorisnickimRacunima upravljanjeKorisnickimRacunima = new FormeIzbornici.UpravljanjeKorisnickimRacunima();
+            upravljanjeKorisnickimRacunima.MdiParent = this;
+            upravljanjeKorisnickimRacunima.WindowState = FormWindowState.Maximized;
+            upravljanjeKorisnickimRacunima.Show();
+        }
+
+        private void FrmAdministrator_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
