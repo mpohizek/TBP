@@ -13,6 +13,7 @@ namespace MjerenjeObracunTroskovaRada
     public partial class FrmZaposlenik : Form
     {
         public Korisnik prijavljeniKorisnik { get; set; } = null;
+        public DateTime vrijemePocetka { get; set; }
         public FrmZaposlenik(Korisnik k)
         {
             InitializeComponent();
@@ -33,12 +34,12 @@ namespace MjerenjeObracunTroskovaRada
 
         private void FrmZaposlenik_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //TODO Otvori prozor upozorenja!
         }
 
         private void FrmZaposlenik_Load(object sender, EventArgs e)
         {
-            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmZaposlenik");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
             evidencijaOdlaskaDolaska.Show();
@@ -46,7 +47,7 @@ namespace MjerenjeObracunTroskovaRada
 
         private void evidencijaDolaskaOdlaskaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmZaposlenik");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
             evidencijaOdlaskaDolaska.Show();

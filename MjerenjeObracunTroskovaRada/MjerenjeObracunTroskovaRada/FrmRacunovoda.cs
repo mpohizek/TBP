@@ -13,6 +13,7 @@ namespace MjerenjeObracunTroskovaRada
     public partial class FrmRacunovoda : Form
     {
         public Korisnik prijavljeniKorisnik { get; set; } = null;
+        public DateTime vrijemePocetka { get; set; }
         public FrmRacunovoda(Korisnik k)
         {
             InitializeComponent();
@@ -23,8 +24,16 @@ namespace MjerenjeObracunTroskovaRada
 
         private void uiActionOdjava_SelectedValueChanged(object sender, EventArgs e)
         {
+
             if (uiActionOdjava.SelectedItem != null)
             {
+                EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+                if (evidencijaBezZavrsnogVremena != null)
+                {
+                    UpozorenjePrijeOdjave upozorenjePrijeOdjave = new UpozorenjePrijeOdjave(prijavljeniKorisnik, vrijemePocetka);
+                    upozorenjePrijeOdjave.ShowDialog();
+
+                }
                 FrmLogin frmLogin = new FrmLogin();
                 this.Hide();
                 frmLogin.ShowDialog();
@@ -33,12 +42,18 @@ namespace MjerenjeObracunTroskovaRada
 
         private void FrmRacunovoda_FormClosed(object sender, FormClosedEventArgs e)
         {
+            EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+            if (evidencijaBezZavrsnogVremena != null)
+            {
+                UpozorenjeZbogNeevidentiranogKrajaSmjene upozorenjeZbogNeevidentiranogKrajaSmjene = new UpozorenjeZbogNeevidentiranogKrajaSmjene(prijavljeniKorisnik, vrijemePocetka);
+                upozorenjeZbogNeevidentiranogKrajaSmjene.ShowDialog();
+            }
             Application.Exit();
         }
 
         private void FrmRacunovoda_Load(object sender, EventArgs e)
         {
-            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmRacunovoda");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
             evidencijaOdlaskaDolaska.Show();
@@ -54,7 +69,7 @@ namespace MjerenjeObracunTroskovaRada
 
         private void evidencijaDolaskaOdlaskaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska();
+            FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmRacunovoda");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
             evidencijaOdlaskaDolaska.Show();

@@ -56,5 +56,39 @@ namespace MjerenjeObracunTroskovaRada
                 conn.Close();
             }
         }
+
+        public static void SpremanjeUBazu(string upit)
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                conn.Open();
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(upit, conn);
+                npgsqlCommand.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        public static EvidencijaRadnogVremena DohvatiEvidencijuRadnogVremena(string oib)
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                EvidencijaRadnogVremena evidencijaBezZavrsetkaSmjene = null;
+
+                conn.Open();
+                string sqlNaredba = "SELECT * FROM evidencija_radnog_vremena WHERE oib = '" + oib + "' AND kraj_smjene IS NOT DISTINCT FROM NULL";
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
+                NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EvidencijaRadnogVremena evidencija  = new EvidencijaRadnogVremena(reader);
+                    evidencijaBezZavrsetkaSmjene = evidencija;
+                }
+                reader.Close();
+                conn.Close();
+
+                return evidencijaBezZavrsetkaSmjene;
+            }
+        }
     }
 }
