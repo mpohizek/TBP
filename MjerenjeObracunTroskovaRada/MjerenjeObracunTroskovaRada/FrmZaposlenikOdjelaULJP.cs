@@ -26,15 +26,60 @@ namespace MjerenjeObracunTroskovaRada
         {
             if (uiActionOdjava.SelectedItem != null)
             {
-                FrmLogin frmLogin = new FrmLogin();
-                this.Hide();
-                frmLogin.ShowDialog();
+                EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+
+                if (evidencijaBezZavrsnogVremena != null)
+                {
+                    if (this.MdiChildren.Count() > 0)
+                    {
+                        foreach (var item in this.MdiChildren)
+                        {
+                            item.Close();
+                        }
+                    }
+                    UpozorenjePrijeOdjave upozorenjePrijeOdjave = new UpozorenjePrijeOdjave(prijavljeniKorisnik, vrijemePocetka);
+                    this.Hide();
+                    upozorenjePrijeOdjave.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    FrmLogin frmLogin = new FrmLogin();
+                    this.Hide();
+                    frmLogin.ShowDialog();
+                    if (this.MdiChildren.Count() > 0)
+                    {
+                        foreach (var item in this.MdiChildren)
+                        {
+                            item.Close();
+                        }
+                    }
+                    this.Close();
+                }
             }
         }
 
         private void FrmZaposlenikOdjelaULJP_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+            if (evidencijaBezZavrsnogVremena != null)
+            {
+                UpozorenjeZbogNeevidentiranogKrajaSmjene upozorenjeZbogNeevidentiranogKrajaSmjene = new UpozorenjeZbogNeevidentiranogKrajaSmjene(prijavljeniKorisnik, vrijemePocetka);
+                this.Hide();
+                upozorenjeZbogNeevidentiranogKrajaSmjene.ShowDialog();
+                if (this.MdiChildren.Count() > 0)
+                {
+                    foreach (var item in this.MdiChildren)
+                    {
+                        item.Close();
+                    }
+                }
+                this.Close();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void FrmZaposlenikOdjelaULJP_Load(object sender, EventArgs e)

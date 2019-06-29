@@ -29,18 +29,27 @@ namespace MjerenjeObracunTroskovaRada
         private void btnEvidentiratiKraj_Click(object sender, EventArgs e)
         {
             UpravljanjePodacima.SpremanjeUBazu("UPDATE evidencija_radnog_vremena SET kraj_smjene = '" + DateTime.Now + "' WHERE oib = '" + prijavljeniKorisnik.OIB + "' AND pocetak_smjene = '" + vrijemePocetka + "'");
+            FrmLogin frmLogin = new FrmLogin();
             this.Hide();
+            frmLogin.ShowDialog();
+            this.Close();
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            this.Hide();
             UpravljanjePodacima.SpremanjeUBazu("DELETE FROM evidencija_radnog_vremena WHERE oib='" + prijavljeniKorisnik.OIB + "' AND kraj_smjene IS NOT DISTINCT FROM NULL");
+            FrmLogin frmLogin = new FrmLogin();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Close();
         }
 
         private void btnOdjavi_Click(object sender, EventArgs e)
         {
+            FrmLogin frmLogin = new FrmLogin();
             this.Hide();
+            frmLogin.ShowDialog();
+            this.Close();
         }
     }
 }

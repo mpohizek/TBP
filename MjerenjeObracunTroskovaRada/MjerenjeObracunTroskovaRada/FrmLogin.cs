@@ -58,6 +58,7 @@ namespace MjerenjeObracunTroskovaRada
                             FrmAdministrator frmAdministrator = new FrmAdministrator(prijavljeniKorisnik);
                             this.Hide();
                             frmAdministrator.ShowDialog();
+                            this.Close();
                             break;
                         }
                     case 2:
@@ -65,6 +66,7 @@ namespace MjerenjeObracunTroskovaRada
                             FrmRacunovoda frmRacunovoda = new FrmRacunovoda(prijavljeniKorisnik);
                             this.Hide();
                             frmRacunovoda.ShowDialog();
+                            this.Close();
                             break;
                         }
                     case 3:
@@ -72,6 +74,7 @@ namespace MjerenjeObracunTroskovaRada
                             FrmZaposlenikOdjelaULJP frmZaposlenikOdjelaULJP = new FrmZaposlenikOdjelaULJP(prijavljeniKorisnik);
                             this.Hide();
                             frmZaposlenikOdjelaULJP.ShowDialog();
+                            this.Close();
                             break;
                         }
                     case 4:
@@ -79,6 +82,7 @@ namespace MjerenjeObracunTroskovaRada
                             FrmZaposlenik frmZaposlenik = new FrmZaposlenik(prijavljeniKorisnik);
                             this.Hide();
                             frmZaposlenik.ShowDialog();
+                            this.Close();
                             break;
                         }
                     default:

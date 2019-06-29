@@ -31,6 +31,7 @@ namespace MjerenjeObracunTroskovaRada
         {
             this.Hide();
             UpravljanjePodacima.SpremanjeUBazu("UPDATE evidencija_radnog_vremena SET kraj_smjene = '" + DateTime.Now + "' WHERE oib = '" + prijavljeniKorisnik.OIB + "' AND pocetak_smjene = '" + vrijemePocetka + "'");
+            this.Close();
             Application.Exit();
         }
 
@@ -38,12 +39,14 @@ namespace MjerenjeObracunTroskovaRada
         {
             this.Hide();
             UpravljanjePodacima.SpremanjeUBazu("DELETE FROM evidencija_radnog_vremena WHERE oib='" + prijavljeniKorisnik.OIB +"' AND kraj_smjene IS NOT DISTINCT FROM NULL");
+            this.Close();
             Application.Exit();
         }
 
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Hide();
+            this.Close();
             Application.Exit();
         }
     }

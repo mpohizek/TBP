@@ -24,19 +24,39 @@ namespace MjerenjeObracunTroskovaRada
 
         private void uiActionOdjava_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            
             if (uiActionOdjava.SelectedItem != null)
             {
                 EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+
                 if (evidencijaBezZavrsnogVremena != null)
                 {
+                    if (this.MdiChildren.Count() > 0)
+                    {
+                        foreach (var item in this.MdiChildren)
+                        {
+                            item.Close();
+                        }
+                    }
                     UpozorenjePrijeOdjave upozorenjePrijeOdjave = new UpozorenjePrijeOdjave(prijavljeniKorisnik, vrijemePocetka);
+                    this.Hide();
                     upozorenjePrijeOdjave.ShowDialog();
-
+                    this.Show();
                 }
-                FrmLogin frmLogin = new FrmLogin();
-                this.Hide();
-                frmLogin.ShowDialog();
+                else
+                {
+                    FrmLogin frmLogin = new FrmLogin();
+                    this.Hide();
+                    frmLogin.ShowDialog();
+                    if (this.MdiChildren.Count() > 0)
+                    {
+                        foreach (var item in this.MdiChildren)
+                        {
+                            item.Close();
+                        }
+                    }
+                    this.Close();
+                }
             }
         }
 
@@ -46,9 +66,21 @@ namespace MjerenjeObracunTroskovaRada
             if (evidencijaBezZavrsnogVremena != null)
             {
                 UpozorenjeZbogNeevidentiranogKrajaSmjene upozorenjeZbogNeevidentiranogKrajaSmjene = new UpozorenjeZbogNeevidentiranogKrajaSmjene(prijavljeniKorisnik, vrijemePocetka);
+                this.Hide();
                 upozorenjeZbogNeevidentiranogKrajaSmjene.ShowDialog();
+                if (this.MdiChildren.Count() > 0)
+                {
+                    foreach (var item in this.MdiChildren)
+                    {
+                        item.Close();
+                    }
+                }
+                this.Close();
             }
-            Application.Exit();
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void FrmRacunovoda_Load(object sender, EventArgs e)

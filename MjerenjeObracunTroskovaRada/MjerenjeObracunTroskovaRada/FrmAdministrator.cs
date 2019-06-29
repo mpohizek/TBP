@@ -28,8 +28,7 @@ namespace MjerenjeObracunTroskovaRada
                 FrmLogin frmLogin = new FrmLogin();
                 this.Hide();
                 frmLogin.ShowDialog();
-
-                
+                this.Close();
             }
         }
 

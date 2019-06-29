@@ -26,15 +26,59 @@ namespace MjerenjeObracunTroskovaRada
         {
             if (uiActionOdjava.SelectedItem != null)
             {
-                FrmLogin frmLogin = new FrmLogin();
-                this.Hide();
-                frmLogin.ShowDialog();
+                EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+                if (evidencijaBezZavrsnogVremena != null)
+                {
+                    if (this.MdiChildren.Count() > 0)
+                    {
+                        foreach (var item in this.MdiChildren)
+                        {
+                            item.Close();
+                        }
+                    }
+                    UpozorenjePrijeOdjave upozorenjePrijeOdjave = new UpozorenjePrijeOdjave(prijavljeniKorisnik, vrijemePocetka);
+                    this.Hide();
+                    upozorenjePrijeOdjave.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    FrmLogin frmLogin = new FrmLogin();
+                    this.Hide();
+                    frmLogin.ShowDialog();
+                    if (this.MdiChildren.Count() > 0)
+                    {
+                        foreach (var item in this.MdiChildren)
+                        {
+                            item.Close();
+                        }
+                    }
+                    this.Close();
+                }
             }
         }
 
         private void FrmZaposlenik_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //TODO Otvori prozor upozorenja!
+            EvidencijaRadnogVremena evidencijaBezZavrsnogVremena = UpravljanjePodacima.DohvatiEvidencijuRadnogVremena(prijavljeniKorisnik.OIB);
+            if (evidencijaBezZavrsnogVremena != null)
+            {
+                UpozorenjeZbogNeevidentiranogKrajaSmjene upozorenjeZbogNeevidentiranogKrajaSmjene = new UpozorenjeZbogNeevidentiranogKrajaSmjene(prijavljeniKorisnik, vrijemePocetka);
+                this.Hide();
+                upozorenjeZbogNeevidentiranogKrajaSmjene.ShowDialog();
+                if (this.MdiChildren.Count() > 0)
+                {
+                    foreach (var item in this.MdiChildren)
+                    {
+                        item.Close();
+                    }
+                }
+                this.Close();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void FrmZaposlenik_Load(object sender, EventArgs e)
