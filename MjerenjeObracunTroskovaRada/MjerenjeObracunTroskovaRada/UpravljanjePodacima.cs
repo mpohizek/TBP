@@ -90,5 +90,49 @@ namespace MjerenjeObracunTroskovaRada
                 return evidencijaBezZavrsetkaSmjene;
             }
         }
+
+        public static List<Korisnik> DohvatiKorisnika()
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                List<Korisnik> listaKorisnika = new List<Korisnik>();
+                conn.Open();
+                string sqlNaredba = "SELECT k.oib, k.korisnicko_ime, k.zaporka, k.ime, k.prezime, k.uloga FROM korisnik k LEFT JOIN zaposlenik z ON k.oib=z.oib WHERE z.oib IS NULL AND k.uloga <> 'administrator'";
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
+                NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Korisnik korisnik = new Korisnik(reader);
+                    listaKorisnika.Add(korisnik);
+                }
+                reader.Close();
+                conn.Close();
+
+                return listaKorisnika;
+            }
+        }
+
+        public static List<Zaposlenik> DohvatiZaposlenike()
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                List<Zaposlenik> listaZaposlenika = new List<Zaposlenik>();
+                conn.Open();
+                string sqlNaredba = "SELECT * FROM zaposlenik";
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
+                NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Zaposlenik zaposlenik = new Zaposlenik(reader);
+                    listaZaposlenika.Add(zaposlenik);
+                }
+                reader.Close();
+                conn.Close();
+
+                return listaZaposlenika;
+            }
+        }
     }
 }

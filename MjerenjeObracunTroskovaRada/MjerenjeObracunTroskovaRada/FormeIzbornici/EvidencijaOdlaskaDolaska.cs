@@ -83,7 +83,7 @@ namespace MjerenjeObracunTroskovaRada.FormeIzbornici
             {
                 btnPocetakSmjene.Enabled = false;
                 btnKrajRada.Enabled = true;
-                vrijemePocetka = evidencijaBezZavrsnogVremena.pocetak_smjene;
+                vrijemePocetka = evidencijaBezZavrsnogVremena.PocetakSmjene;
                 timerTrajanjeSmjene.Start();
                 txtVrijemePocetka.Text= vrijemePocetka.ToString();
             }

@@ -131,6 +131,7 @@
       <DependentUpon>FrmZaposlenikOdjelaULJP.cs</DependentUpon>
     </Compile>
     <Compile Include="Korisnik.cs" />
+    <Compile Include="KoristenjeGodisnjegOdmora.cs" />
     <Compile Include="PoslovnaLogikaObracunaPlaca.cs" />
     <Compile Include="UpozorenjePrijeOdjave.cs">
       <SubType>Form</SubType>
@@ -147,6 +148,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpravljanjePodacima.cs" />
+    <Compile Include="Zaposlenik.cs" />
     <EmbeddedResource Include="FormeIzbornici\AzuriranjePodatakaZaposlenika.resx">
       <DependentUpon>AzuriranjePodatakaZaposlenika.cs</DependentUpon>
     </EmbeddedResource>

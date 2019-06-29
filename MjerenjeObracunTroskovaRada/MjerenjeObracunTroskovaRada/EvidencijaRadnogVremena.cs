@@ -12,7 +12,7 @@ namespace MjerenjeObracunTroskovaRada
     public class EvidencijaRadnogVremena
     {
         public string OIB { get; set; }
-        public DateTime pocetak_smjene { get; set; }
+        public DateTime PocetakSmjene { get; set; }
 
         /// <summary>
         /// Konstruktor koji kreira EvidencijuRadnogVremena sa podacima iz DataReader objekta.
@@ -23,7 +23,7 @@ namespace MjerenjeObracunTroskovaRada
             if (dr != null)
             {
                 OIB = dr["oib"].ToString();
-                pocetak_smjene = Convert.ToDateTime(dr["pocetak_smjene"]);
+                PocetakSmjene = Convert.ToDateTime(dr["pocetak_smjene"]);
             }
         }
     }
