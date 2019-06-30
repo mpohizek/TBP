@@ -98,7 +98,7 @@ namespace MjerenjeObracunTroskovaRada
                 List<EvidencijaRadnogVremena2> lista = new List<EvidencijaRadnogVremena2>();
 
                 conn.Open();
-                string sqlNaredba = "SELECT * FROM evidencija_radnog_vremena WHERE oib = '" + oib + "' AND date_part('year', TIMESTAMP pocetak_smjene) = '"+ godina + "' AND date_part('month', TIMESTAMP pocetak_smjene) = '" + mjesec + "'";
+                string sqlNaredba = "SELECT * FROM evidencija_radnog_vremena WHERE oib = '" + oib + "'";
                 NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
                 NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
 
