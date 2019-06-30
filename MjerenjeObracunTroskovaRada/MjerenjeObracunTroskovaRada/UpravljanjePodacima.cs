@@ -91,13 +91,13 @@ namespace MjerenjeObracunTroskovaRada
             }
         }
 
-        public static List<Korisnik> DohvatiKorisnika()
+        public static List<Korisnik> DohvatiKorisnike(string sql)
         {
             using (var conn = new NpgsqlConnection(ConnectionString))
             {
                 List<Korisnik> listaKorisnika = new List<Korisnik>();
                 conn.Open();
-                string sqlNaredba = "SELECT k.oib, k.korisnicko_ime, k.zaporka, k.ime, k.prezime, k.uloga FROM korisnik k LEFT JOIN zaposlenik z ON k.oib=z.oib WHERE z.oib IS NULL AND k.uloga <> 'administrator'";
+                string sqlNaredba = sql;
                 NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
                 NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
 

@@ -19,7 +19,7 @@ namespace MjerenjeObracunTroskovaRada.FormeIzbornici
 
         private void UnosNovihZaposlenika_Load(object sender, EventArgs e)
         {
-            List<Korisnik> listaKorisnika = new List<Korisnik>(UpravljanjePodacima.DohvatiKorisnika());
+            List<Korisnik> listaKorisnika = new List<Korisnik>(UpravljanjePodacima.DohvatiKorisnike("SELECT k.oib, k.korisnicko_ime, k.zaporka, k.ime, k.prezime, k.uloga FROM korisnik k LEFT JOIN zaposlenik z ON k.oib=z.oib WHERE z.oib IS NULL AND k.uloga <> 'administrator'"));
             comboBoxOIB.DataSource = listaKorisnika;
             comboBoxOIB.DisplayMember = "oib";
             comboBoxOIB.ValueMember = "oib";
