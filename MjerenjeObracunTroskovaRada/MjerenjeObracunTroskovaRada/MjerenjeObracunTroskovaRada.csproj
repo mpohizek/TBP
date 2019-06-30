@@ -85,12 +85,6 @@
     <Compile Include="FormeIzbornici\PlaniranjeGodisnjegOdmora.Designer.cs">
       <DependentUpon>PlaniranjeGodisnjegOdmora.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormeIzbornici\PregledStanjaPrekovremenihSati.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormeIzbornici\PregledStanjaPrekovremenihSati.Designer.cs">
-      <DependentUpon>PregledStanjaPrekovremenihSati.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormeIzbornici\UnosNovihZaposlenika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +141,7 @@
     </Compile>
     <Compile Include="Korisnik.cs" />
     <Compile Include="KoristenjeGodisnjegOdmora.cs" />
+    <Compile Include="ObracunskaLista.cs" />
     <Compile Include="PoslovnaLogikaObracunaPlaca.cs" />
     <Compile Include="UpozorenjePrijeOdjave.cs">
       <SubType>Form</SubType>
@@ -175,9 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormeIzbornici\PlaniranjeGodisnjegOdmora.resx">
       <DependentUpon>PlaniranjeGodisnjegOdmora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormeIzbornici\PregledStanjaPrekovremenihSati.resx">
-      <DependentUpon>PregledStanjaPrekovremenihSati.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormeIzbornici\UnosNovihZaposlenika.resx">
       <DependentUpon>UnosNovihZaposlenika.cs</DependentUpon>

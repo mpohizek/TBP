@@ -16,5 +16,11 @@ namespace MjerenjeObracunTroskovaRada.FormeIzbornici
         {
             InitializeComponent();
         }
+
+        private void btnIzvrsiObracun_Click(object sender, EventArgs e)
+        {
+            PoslovnaLogikaObracunaPlaca poslovnaLogikaObracunaPlaca = new PoslovnaLogikaObracunaPlaca();
+            poslovnaLogikaObracunaPlaca.ObracunavanjePlaca();
+        }
     }
 }

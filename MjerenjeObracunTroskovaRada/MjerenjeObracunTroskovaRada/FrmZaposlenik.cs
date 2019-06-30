@@ -125,20 +125,5 @@ namespace MjerenjeObracunTroskovaRada
             planiranjeGodisnjegOdmora.WindowState = FormWindowState.Maximized;
             planiranjeGodisnjegOdmora.Show();
         }
-
-        private void pregledStanjaPrekovremenihSatiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (this.MdiChildren.Count() > 0)
-            {
-                foreach (var item in this.MdiChildren)
-                {
-                    item.Close();
-                }
-            }
-            FormeIzbornici.PregledStanjaPrekovremenihSati pregledStanjaPrekovremenihSati = new FormeIzbornici.PregledStanjaPrekovremenihSati();
-            pregledStanjaPrekovremenihSati.MdiParent = this;
-            pregledStanjaPrekovremenihSati.WindowState = FormWindowState.Maximized;
-            pregledStanjaPrekovremenihSati.Show();
-        }
     }
 }

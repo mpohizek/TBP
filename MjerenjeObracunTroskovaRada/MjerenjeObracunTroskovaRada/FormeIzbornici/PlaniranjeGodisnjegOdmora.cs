@@ -66,12 +66,11 @@ namespace MjerenjeObracunTroskovaRada.FormeIzbornici
 
         private void btnEvidentiraj_Click(object sender, EventArgs e)
         {
-            FrmEvidentirajGo frmEvidentirajGo = new FrmEvidentirajGo(PrijavljeniKorisnik, dgvKoristenjeGO.RowCount);
+            FrmEvidentirajGo frmEvidentirajGo = new FrmEvidentirajGo(PrijavljeniKorisnik, dgvKoristenjeGO.RowCount + 1);
             frmEvidentirajGo.ShowDialog();
             txtNeiskoristenoGO.Text = OsvjeziBrojNeiskoristenihDanaGO().ToString();
             OsvjeziPopisKoristenjaGO();
         }
-
         private void btnSljedecaGodina_Click(object sender, EventArgs e)
         {
             UpravljanjePodacima.SpremanjeUBazu("UPDATE zaposlenik SET neiskoristeno_go_tekuce_god = '"+ OsvjeziBrojNeiskoristenihDanaGO() + 60 + "'  WHERE oib = '"+ PrijavljeniKorisnik.OIB +"'");

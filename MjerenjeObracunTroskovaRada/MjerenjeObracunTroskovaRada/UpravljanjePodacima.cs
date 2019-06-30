@@ -91,6 +91,29 @@ namespace MjerenjeObracunTroskovaRada
             }
         }
 
+        public static List<EvidencijaRadnogVremena2> DohvatiEvidencijeRadnogVremenaZaObracunPlace(string oib, int godina, int mjesec)
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                List<EvidencijaRadnogVremena2> lista = new List<EvidencijaRadnogVremena2>();
+
+                conn.Open();
+                string sqlNaredba = "SELECT * FROM evidencija_radnog_vremena WHERE oib = '" + oib + "' AND date_part('year', TIMESTAMP pocetak_smjene) = '"+ godina + "' AND date_part('month', TIMESTAMP pocetak_smjene) = '" + mjesec + "'";
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
+                NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EvidencijaRadnogVremena2 evidencija = new EvidencijaRadnogVremena2(reader);
+                    lista.Add(evidencija);
+                }
+                reader.Close();
+                conn.Close();
+
+                return lista;
+            }
+        }
+
         public static List<Korisnik> DohvatiKorisnike(string sql)
         {
             using (var conn = new NpgsqlConnection(ConnectionString))

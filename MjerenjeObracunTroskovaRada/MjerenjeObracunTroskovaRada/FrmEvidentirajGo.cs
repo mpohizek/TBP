@@ -18,13 +18,14 @@ namespace MjerenjeObracunTroskovaRada
         {
             InitializeComponent();
             PrijavljeniKorisnik = k;
+            BrojKoristenja = br;
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             try
             {
-                UpravljanjePodacima.SpremanjeUBazu("INSERT INTO koristenje_godisnjeg_odmora (oib, godina, redni_br_koristenja, pocetak, kraj) VALUES ('"+PrijavljeniKorisnik.OIB+"', '"+ Convert.ToInt32(DateTime.Now.Year) + "', '"+ BrojKoristenja+1 +"', '"+ datePickerPocetak.Value + "', '" + datePickerZavrsetak.Value + "')");
+                UpravljanjePodacima.SpremanjeUBazu("INSERT INTO koristenje_godisnjeg_odmora (oib, godina, redni_br_koristenja, pocetak, kraj) VALUES ('"+PrijavljeniKorisnik.OIB+"', '"+ Convert.ToInt32(DateTime.Now.Year) + "', '"+ BrojKoristenja +"', '"+ datePickerPocetak.Value + "', '" + datePickerZavrsetak.Value + "')");
                 MessageBox.Show("Odlazak na godišnji odmor je spremljen u bazu.", "Obavijest", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

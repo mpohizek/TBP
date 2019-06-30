@@ -31,7 +31,6 @@
             this.izbornikZaposlenik = new System.Windows.Forms.MenuStrip();
             this.evidencijaDolaskaOdlaskaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planiranjeGodisnjegOdmoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtImeKorisnika = new System.Windows.Forms.TextBox();
             this.uiActionOdjava = new System.Windows.Forms.ComboBox();
             this.izbornikZaposlenik.SuspendLayout();
@@ -41,8 +40,7 @@
             // 
             this.izbornikZaposlenik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.evidencijaDolaskaOdlaskaToolStripMenuItem,
-            this.planiranjeGodisnjegOdmoraToolStripMenuItem,
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem});
+            this.planiranjeGodisnjegOdmoraToolStripMenuItem});
             this.izbornikZaposlenik.Location = new System.Drawing.Point(0, 0);
             this.izbornikZaposlenik.Name = "izbornikZaposlenik";
             this.izbornikZaposlenik.Size = new System.Drawing.Size(933, 24);
@@ -62,13 +60,6 @@
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Size = new System.Drawing.Size(171, 20);
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Text = "Planiranje godišnjeg odmora";
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Click += new System.EventHandler(this.planiranjeGodisnjegOdmoraToolStripMenuItem_Click);
-            // 
-            // pregledStanjaPrekovremenihSatiToolStripMenuItem
-            // 
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Name = "pregledStanjaPrekovremenihSatiToolStripMenuItem";
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Size = new System.Drawing.Size(197, 20);
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Text = "Pregled stanja prekovremenih sati";
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Click += new System.EventHandler(this.pregledStanjaPrekovremenihSatiToolStripMenuItem_Click);
             // 
             // txtImeKorisnika
             // 
@@ -121,6 +112,5 @@
         private System.Windows.Forms.ComboBox uiActionOdjava;
         private System.Windows.Forms.ToolStripMenuItem evidencijaDolaskaOdlaskaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planiranjeGodisnjegOdmoraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pregledStanjaPrekovremenihSatiToolStripMenuItem;
     }
 }

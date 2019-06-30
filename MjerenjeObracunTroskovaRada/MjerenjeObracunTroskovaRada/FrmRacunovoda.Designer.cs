@@ -33,7 +33,6 @@
             this.izbornikRacunovoda = new System.Windows.Forms.MenuStrip();
             this.evidencijaOdlaskaDolaskaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planiranjeGodisnjegOdmoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.obračunPlaćeToolStriMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izbornikRacunovoda.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +62,6 @@
             this.izbornikRacunovoda.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.evidencijaOdlaskaDolaskaToolStripMenuItem,
             this.planiranjeGodisnjegOdmoraToolStripMenuItem,
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem,
             this.obračunPlaćeToolStriMenuItem});
             this.izbornikRacunovoda.Location = new System.Drawing.Point(0, 0);
             this.izbornikRacunovoda.Name = "izbornikRacunovoda";
@@ -84,13 +82,6 @@
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Size = new System.Drawing.Size(171, 20);
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Text = "Planiranje godišnjeg odmora";
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Click += new System.EventHandler(this.planiranjeGodisnjegOdmoraToolStripMenuItem_Click);
-            // 
-            // pregledStanjaPrekovremenihSatiToolStripMenuItem
-            // 
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Name = "pregledStanjaPrekovremenihSatiToolStripMenuItem";
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Size = new System.Drawing.Size(197, 20);
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Text = "Pregled stanja prekovremenih sati";
-            this.pregledStanjaPrekovremenihSatiToolStripMenuItem.Click += new System.EventHandler(this.pregledStanjaPrekovremenihSatiToolStripMenuItem_Click);
             // 
             // obračunPlaćeToolStriMenuItem
             // 
@@ -130,7 +121,6 @@
         private System.Windows.Forms.MenuStrip izbornikRacunovoda;
         private System.Windows.Forms.ToolStripMenuItem evidencijaOdlaskaDolaskaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planiranjeGodisnjegOdmoraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pregledStanjaPrekovremenihSatiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obračunPlaćeToolStriMenuItem;
     }
 }

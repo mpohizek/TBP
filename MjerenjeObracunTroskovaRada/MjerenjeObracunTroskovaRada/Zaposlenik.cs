@@ -17,18 +17,6 @@ namespace MjerenjeObracunTroskovaRada
         public int BrojDjece { get; set; }
         public string IBAN { get; set; }
 
-        public Zaposlenik(string oib, string rm, DateTime dz, decimal brotoRedovna, decimal brutoPrekovremeni, int brUzdClanova, int brDjece, string iban)
-        {
-            OIB = oib;
-            RadnoMjesto = rm;
-            DatumZaposlenja = dz;
-            BrutoCijenaSatRedovni = brotoRedovna;
-            BrutoCijenaSatPrekovremeni = brutoPrekovremeni;
-            BrojUzdrzavanihClanova = brUzdClanova;
-            BrojDjece = brDjece;
-            IBAN = iban;
-        }
-
         public Zaposlenik(Npgsql.NpgsqlDataReader dr)
         {
             if (dr != null)

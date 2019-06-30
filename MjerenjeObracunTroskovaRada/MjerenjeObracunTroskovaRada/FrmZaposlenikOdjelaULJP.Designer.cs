@@ -31,7 +31,6 @@
             this.izbornikULJP = new System.Windows.Forms.MenuStrip();
             this.evidencijaDolaskaOdlaskaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planiranjeGodisnjegOdmoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unosNovihZaposlenikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unosNovihZaposlenikaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.azuriranjePodatakaOZaposlenicimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +44,6 @@
             this.izbornikULJP.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.evidencijaDolaskaOdlaskaToolStripMenuItem,
             this.planiranjeGodisnjegOdmoraToolStripMenuItem,
-            this.pregledToolStripMenuItem,
             this.unosNovihZaposlenikaToolStripMenuItem});
             this.izbornikULJP.Location = new System.Drawing.Point(0, 0);
             this.izbornikULJP.Name = "izbornikULJP";
@@ -66,13 +64,6 @@
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Size = new System.Drawing.Size(171, 20);
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Text = "Planiranje godišnjeg odmora";
             this.planiranjeGodisnjegOdmoraToolStripMenuItem.Click += new System.EventHandler(this.planiranjeGodisnjegOdmoraToolStripMenuItem_Click);
-            // 
-            // pregledToolStripMenuItem
-            // 
-            this.pregledToolStripMenuItem.Name = "pregledToolStripMenuItem";
-            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(197, 20);
-            this.pregledToolStripMenuItem.Text = "Pregled stanja prekovremenih sati";
-            this.pregledToolStripMenuItem.Click += new System.EventHandler(this.pregledToolStripMenuItem_Click);
             // 
             // unosNovihZaposlenikaToolStripMenuItem
             // 
@@ -148,7 +139,6 @@
         private System.Windows.Forms.ComboBox uiActionOdjava;
         private System.Windows.Forms.ToolStripMenuItem evidencijaDolaskaOdlaskaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planiranjeGodisnjegOdmoraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pregledToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unosNovihZaposlenikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unosNovihZaposlenikaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem azuriranjePodatakaOZaposlenicimaToolStripMenuItem;

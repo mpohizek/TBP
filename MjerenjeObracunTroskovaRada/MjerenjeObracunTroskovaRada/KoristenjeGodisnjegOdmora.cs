@@ -14,15 +14,6 @@ namespace MjerenjeObracunTroskovaRada
         public DateTime Pocetak { get; set; }
         public DateTime Kraj { get; set; }
 
-        public KoristenjeGodisnjegOdmora(string oib, int g, int rbr, DateTime pocetak, DateTime kraj)
-        {
-            OIB = oib;
-            Godina = g;
-            RedniBrojKoristenja = rbr;
-            Pocetak = pocetak;
-            Kraj = kraj;
-        }
-
         public KoristenjeGodisnjegOdmora(Npgsql.NpgsqlDataReader dr)
         {
             if (dr != null)
