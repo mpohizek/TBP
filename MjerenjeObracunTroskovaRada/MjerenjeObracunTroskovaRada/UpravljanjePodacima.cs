@@ -134,5 +134,42 @@ namespace MjerenjeObracunTroskovaRada
                 return listaZaposlenika;
             }
         }
+
+        public static object DohvatiVrijednost(string sql)
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                conn.Open();
+                string sqlNaredba = sql;
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
+                object vrijednost = npgsqlCommand.ExecuteScalar();
+
+                conn.Close();
+
+                return vrijednost;
+            }
+        }
+
+        public static List<KoristenjeGodisnjegOdmora> DohvatiKoristenjeGO(string sql)
+        {
+            using (var conn = new NpgsqlConnection(ConnectionString))
+            {
+                List<KoristenjeGodisnjegOdmora> listaKoristenjaGO = new List<KoristenjeGodisnjegOdmora>();
+                conn.Open();
+                string sqlNaredba = sql;
+                NpgsqlCommand npgsqlCommand = new NpgsqlCommand(sqlNaredba, conn);
+                NpgsqlDataReader reader = npgsqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    KoristenjeGodisnjegOdmora k = new KoristenjeGodisnjegOdmora(reader);
+                    listaKoristenjaGO.Add(k);
+                }
+                reader.Close();
+                conn.Close();
+
+                return listaKoristenjaGO;
+            }
+        }
     }
 }

@@ -76,6 +76,7 @@
             this.btnIspisi.TabIndex = 14;
             this.btnIspisi.Text = "ISPIŠI";
             this.btnIspisi.UseVisualStyleBackColor = true;
+            this.btnIspisi.Click += new System.EventHandler(this.btnIspisi_Click);
             // 
             // UpravljanjeKorisnickimRacunima
             // 

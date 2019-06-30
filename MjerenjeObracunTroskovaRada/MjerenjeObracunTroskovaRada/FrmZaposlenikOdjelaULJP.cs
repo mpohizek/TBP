@@ -84,6 +84,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void FrmZaposlenikOdjelaULJP_Load(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmZaposlenikOdjelaULJP");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
@@ -92,6 +99,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void evidencijaDolaskaOdlaskaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmZaposlenikOdjelaULJP");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
@@ -100,7 +114,14 @@ namespace MjerenjeObracunTroskovaRada
 
         private void planiranjeGodisnjegOdmoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormeIzbornici.PlaniranjeGodisnjegOdmora planiranjeGodisnjegOdmora = new FormeIzbornici.PlaniranjeGodisnjegOdmora();
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
+            FormeIzbornici.PlaniranjeGodisnjegOdmora planiranjeGodisnjegOdmora = new FormeIzbornici.PlaniranjeGodisnjegOdmora(prijavljeniKorisnik);
             planiranjeGodisnjegOdmora.MdiParent = this;
             planiranjeGodisnjegOdmora.WindowState = FormWindowState.Maximized;
             planiranjeGodisnjegOdmora.Show();
@@ -108,6 +129,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void pregledToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.PregledStanjaPrekovremenihSati pregledStanjaPrekovremenihSati = new FormeIzbornici.PregledStanjaPrekovremenihSati();
             pregledStanjaPrekovremenihSati.MdiParent = this;
             pregledStanjaPrekovremenihSati.WindowState = FormWindowState.Maximized;
@@ -116,6 +144,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void unosNovihZaposlenikaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.UnosNovihZaposlenika unosNovihZaposlenika = new FormeIzbornici.UnosNovihZaposlenika();
             unosNovihZaposlenika.MdiParent = this;
             unosNovihZaposlenika.WindowState = FormWindowState.Maximized;
@@ -124,6 +159,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void azuriranjePodatakaOZaposlenicimaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.AzuriranjePodatakaZaposlenika azuriranjePodatakaZaposlenika = new FormeIzbornici.AzuriranjePodatakaZaposlenika();
             azuriranjePodatakaZaposlenika.MdiParent = this;
             azuriranjePodatakaZaposlenika.WindowState = FormWindowState.Maximized;

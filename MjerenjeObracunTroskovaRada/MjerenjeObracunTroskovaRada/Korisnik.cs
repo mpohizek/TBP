@@ -19,25 +19,6 @@ namespace MjerenjeObracunTroskovaRada
         public string Uloga { get; set; }
 
         /// <summary>
-        /// Obični konstruktor.
-        /// </summary>
-        /// <param name="oib">Unosi zaposlenik odjela ULJP prilikom zapošljavanja novog zaposlenika.</param>
-        /// <param name="korIme">Unosi zaposlenik odjela ULJP prilikom zapošljavanja novog zaposlenika.</param>
-        /// <param name="zaporka">Unosi zaposlenik odjela ULJP prilikom zapošljavanja novog zaposlenika.</param>
-        /// <param name="ime">Unosi zaposlenik odjela ULJP prilikom zapošljavanja novog zaposlenika.</param>
-        /// <param name="prezime">Unosi zaposlenik odjela ULJP prilikom zapošljavanja novog zaposlenika.</param>
-        /// <param name="uloga">Unosi zaposlenik odjela ULJP prilikom zapošljavanja novog zaposlenika.</param>
-        public Korisnik(string oib, string korIme, string zaporka, string ime, string prezime, string uloga)
-        {
-            OIB = oib;
-            KorisnickoIme = korIme;
-            Zaporka = zaporka;
-            Ime = ime;
-            Prezime = prezime;
-            Uloga = uloga;
-        }
-
-        /// <summary>
         /// Konstruktor koji kreira Zaposlenika sa podacima iz DataReader objekta.
         /// </summary>
         /// <param name="dr">DataReader</param>
@@ -52,6 +33,10 @@ namespace MjerenjeObracunTroskovaRada
                 Prezime = dr["prezime"].ToString();
                 Uloga = dr["uloga"].ToString();
             }
+        }
+        public override string ToString()
+        {
+            return "OIB: " + this.OIB + Environment.NewLine + "Korisničko ime: " + this.KorisnickoIme + Environment.NewLine + "Zaporka: " + this.Zaporka + Environment.NewLine + "Ime: " + this.Ime + Environment.NewLine + "Prezime: " + this.Prezime + Environment.NewLine + "Uloga: " + this.Uloga;
         }
     }
 

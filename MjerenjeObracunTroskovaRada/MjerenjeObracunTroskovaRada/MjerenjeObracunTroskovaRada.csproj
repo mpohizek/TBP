@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Npgsql, Version=4.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.0.4\lib\net451\Npgsql.dll</HintPath>
     </Reference>
@@ -106,6 +109,12 @@
     <Compile Include="FrmAdministrator.Designer.cs">
       <DependentUpon>FrmAdministrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEvidentirajGo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvidentirajGo.Designer.cs">
+      <DependentUpon>FrmEvidentirajGo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmKorisnik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrator.resx">
       <DependentUpon>FrmAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEvidentirajGo.resx">
+      <DependentUpon>FrmEvidentirajGo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKorisnik.resx">
       <DependentUpon>FrmKorisnik.cs</DependentUpon>

@@ -85,6 +85,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void FrmRacunovoda_Load(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmRacunovoda");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
@@ -93,6 +100,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void obracunPlaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.ObracunPlaca obracunPlaca = new FormeIzbornici.ObracunPlaca();
             obracunPlaca.MdiParent = this;
             obracunPlaca.WindowState = FormWindowState.Maximized;
@@ -101,6 +115,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void evidencijaDolaskaOdlaskaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.EvidencijaOdlaskaDolaska evidencijaOdlaskaDolaska = new FormeIzbornici.EvidencijaOdlaskaDolaska(prijavljeniKorisnik, "FrmRacunovoda");
             evidencijaOdlaskaDolaska.MdiParent = this;
             evidencijaOdlaskaDolaska.WindowState = FormWindowState.Maximized;
@@ -109,7 +130,14 @@ namespace MjerenjeObracunTroskovaRada
 
         private void planiranjeGodisnjegOdmoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormeIzbornici.PlaniranjeGodisnjegOdmora planiranjeGodisnjegOdmora = new FormeIzbornici.PlaniranjeGodisnjegOdmora();
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
+            FormeIzbornici.PlaniranjeGodisnjegOdmora planiranjeGodisnjegOdmora = new FormeIzbornici.PlaniranjeGodisnjegOdmora(prijavljeniKorisnik);
             planiranjeGodisnjegOdmora.MdiParent = this;
             planiranjeGodisnjegOdmora.WindowState = FormWindowState.Maximized;
             planiranjeGodisnjegOdmora.Show();
@@ -117,6 +145,13 @@ namespace MjerenjeObracunTroskovaRada
 
         private void pregledStanjaPrekovremenihSatiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.MdiChildren.Count() > 0)
+            {
+                foreach (var item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+            }
             FormeIzbornici.PregledStanjaPrekovremenihSati pregledStanjaPrekovremenihSati = new FormeIzbornici.PregledStanjaPrekovremenihSati();
             pregledStanjaPrekovremenihSati.MdiParent = this;
             pregledStanjaPrekovremenihSati.WindowState = FormWindowState.Maximized;

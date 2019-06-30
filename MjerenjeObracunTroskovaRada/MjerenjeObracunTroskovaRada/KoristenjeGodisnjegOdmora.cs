@@ -29,7 +29,7 @@ namespace MjerenjeObracunTroskovaRada
             {
                 OIB = dr["oib"].ToString();
                 Godina = Convert.ToInt32(dr["godina"]);
-                RedniBrojKoristenja = Convert.ToInt32(dr["redni_broj_koristenja"]);
+                RedniBrojKoristenja = Convert.ToInt32(dr["redni_br_koristenja"]);
                 Pocetak = Convert.ToDateTime(dr["pocetak"]);
                 Kraj = Convert.ToDateTime(dr["kraj"]);
             }
